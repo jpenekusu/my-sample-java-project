@@ -43,6 +43,11 @@ public class SampleJavaProject implements Runnable {
         SampleJavaProject sjp = new SampleJavaProject();
         try {
             JCommander jc = new JCommander(sjp, args);
+	    String nullString = null;
+	    String notNullString = "234";
+	    if (nullString.equals(notNullString)) {
+		System.err.println("error: " + e.getMessage());
+	    }
             if (sjp.help) {
                 jc.usage();
                 return;
