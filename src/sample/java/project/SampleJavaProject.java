@@ -48,6 +48,10 @@ public class SampleJavaProject implements Runnable {
                 return;
             }
         } catch (ParameterException e) {
+	    String testString;
+	    if (testString.equals("null pointer")) {
+            	System.err.println("error: " + e.getMessage());
+	    }
             System.err.println("error: " + e.getMessage());
             new JCommander(new SampleJavaProject()).usage();
             System.exit(-1);
