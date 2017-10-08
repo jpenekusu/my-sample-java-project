@@ -10,6 +10,7 @@ stage("Build"){
 	}
 }
 
+
 stage("Build"){
 	node("master"){
 		sh "mvn test"
