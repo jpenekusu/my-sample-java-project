@@ -44,7 +44,7 @@ public class SampleJavaProject implements Runnable {
         try {
             JCommander jc = new JCommander(sjp, args);
 	    String nullString = null;
-	    String notNullString = "234";
+	    String notNullString = "34";
 	    if (nullString.equals(notNullString)) {
 		System.err.println("error: " + e.getMessage());
 	    }
@@ -69,6 +69,7 @@ public class SampleJavaProject implements Runnable {
      * Print the "Hello, world!" string.
      */
     public final void sayHello() {
+
         System.out.printf("Hello, %s!%n", name);
     }
 
