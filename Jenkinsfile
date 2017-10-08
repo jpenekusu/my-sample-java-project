@@ -1,6 +1,6 @@
 stage("Get source code"){
 	node("master"){
-		git 'https://github.com/jpenekusu/sample-java-project.git'
+		git 'https://github.com/jpenekusu/my-sample-java-project.git'
 	}
 }
 
@@ -9,6 +9,7 @@ stage("Build"){
 		sh "mvn compile -DskipTests"
 	}
 }
+
 
 stage("Build"){
 	node("master"){
