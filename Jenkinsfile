@@ -1,18 +1,35 @@
-stage("Get source code"){
-	node("master"){
-		git 'https://github.com/jpenekusu/my-sample-java-project.git'
-	}
-}
+pipeline {
 
-stage("Build"){
-	node("master"){
-		sh "mvn compile -DskipTests"
-	}
-}
+   agent any
 
+   tools{
+      maven 'maven-3.9'
+   }
 
-stage("Build"){
-	node("master"){
-		sh "mvn test"
-	}
+   stages {
+      stage('Clone') {
+         steps {
+            script {
+               echo "📦 Récupération du code source..."
+               checkout scm
+            }	 
+         }
+      }
+	  stage('Compile'){
+         steps{
+         	sh "mvn compile"
+         }
+      }
+      stage('Test'){
+         steps{
+        	sh "mvn test"
+         }
+      }
+      
+      stage('Build'){
+         steps{
+            sh "mvn -B -DskipTests clean install"
+         }
+      }
+   }
 }
