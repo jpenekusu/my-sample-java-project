@@ -32,7 +32,24 @@ public class SampleJavaProjectTest {
         assertEquals("foo", sjp.getName());
     }
 
-    /**
+     /**
+     * Tests the generated setter and getter methods.
+     */
+    @Test
+    public final void testGetSetNew() {
+        sjp.setName("toto");
+        assertEquals("toto", sjp.getName());
+    }
+    
+    /**    /**
+     * Tests the generated setter and getter methods.
+     */
+    @Test
+    public final void testGetSetNew() {
+        sjp.setName("toto");
+        assertEquals("toto", sjp.getName());
+    }
+    
      * Tests that the null check in the setter.
      */
     @Test(expected=NullPointerException.class)

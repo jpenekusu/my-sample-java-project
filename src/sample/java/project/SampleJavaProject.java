@@ -72,6 +72,10 @@ public class SampleJavaProject implements Runnable {
         System.out.printf("Hello, %s!%n", name);
     }
 
+    public final void someSmellCodeHere() {
+        System.out.printf("Hello, %s!%n", name);
+    }
+	
     @Override
     public final void run() {
         do {
